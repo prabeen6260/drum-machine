@@ -6,7 +6,8 @@ const ACTION={
   DRUM_PAD: 'DRUM_PAD',
   KEY_PAD: 'KEY_PAD',
   POWER: 'POWER',
-  BANK: 'BANK'
+  BANK: 'BANK',
+  VOLUME: 'VOLUME'
 }
 
 function reducer(state,action){
@@ -19,7 +20,7 @@ function reducer(state,action){
               ...state,
               displayValue: 'Heater 1',
               styles: {color: action.color},
-              sound: playSound('https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3')
+              sound: playSound('https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3',state.volume)
             }
           }
           else if(action.payload==='W'){
@@ -27,7 +28,7 @@ function reducer(state,action){
               ...state,
               displayValue: 'Heater 2',
               styles: {color: action.color},
-              sound: playSound('https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3'),
+              sound: playSound('https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3',state.volume),
             }
           }
           else if(action.payload==='E'){
@@ -35,7 +36,7 @@ function reducer(state,action){
               ...state,
               displayValue: 'Heater 3',
               styles: {color: action.color},
-              sound: playSound('https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3')
+              sound: playSound('https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3',state.volume)
             }
           }
           else if(action.payload==='A'){
@@ -43,7 +44,7 @@ function reducer(state,action){
               ...state,
               displayValue: 'Heater 4',
               styles: {color: action.color},
-              sound: playSound('https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3')
+              sound: playSound('https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3',state.volume)
             }
           }
           else if(action.payload==='S'){
@@ -51,7 +52,7 @@ function reducer(state,action){
               ...state,
               displayValue: 'Clap',
               styles: {color: action.color},
-              sound: playSound('https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3')
+              sound: playSound('https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3',state.volume)
             }
           }
           else if(action.payload==='D'){
@@ -59,7 +60,7 @@ function reducer(state,action){
               ...state,
               displayValue: 'Open HH',
               styles: {color: action.color},
-              sound: playSound('https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3')
+              sound: playSound('https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3',state.volume)
             }
           }
           else if(action.payload==='Z'){
@@ -67,7 +68,7 @@ function reducer(state,action){
               ...state,
               displayValue: 'Kick n\' Hat',
               styles: {color: action.color},
-              sound: playSound('https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3')
+              sound: playSound('https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3',state.volume)
             }
           }
           else if(action.payload==='X'){
@@ -75,7 +76,7 @@ function reducer(state,action){
               ...state,
               displayValue: 'Kick',
               styles: {color: action.color},
-              sound: playSound('https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3')
+              sound: playSound('https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3',state.volume)
             }
           }
           else if(action.payload==='C'){
@@ -83,7 +84,7 @@ function reducer(state,action){
               ...state,
               displayValue: 'Closed HH',
               styles: {color: action.color},
-              sound: playSound('https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3')
+              sound: playSound('https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3',state.volume)
             }
           }
           else if(action.payload===ACTION.BANK){
@@ -100,7 +101,7 @@ function reducer(state,action){
               ...state,
               displayValue: 'Chord 1',
               styles: {color: action.color},
-              sound: playSound('https://s3.amazonaws.com/freecodecamp/drums/Chord_1.mp3')
+              sound: playSound('https://s3.amazonaws.com/freecodecamp/drums/Chord_1.mp3',state.volume)
             }
           }
           else if(action.payload==='W'){
@@ -108,7 +109,7 @@ function reducer(state,action){
               ...state,
               displayValue: 'Chord 2',
               styles: {color: action.color},
-              sound: playSound('https://s3.amazonaws.com/freecodecamp/drums/Chord_2.mp3')
+              sound: playSound('https://s3.amazonaws.com/freecodecamp/drums/Chord_2.mp3',state.volume)
             }
           }
           else if(action.payload==='E'){
@@ -116,7 +117,7 @@ function reducer(state,action){
               ...state,
               displayValue: 'Chord 3',
               styles: {color: action.color},
-              sound: playSound('https://s3.amazonaws.com/freecodecamp/drums/Chord_3.mp3')
+              sound: playSound('https://s3.amazonaws.com/freecodecamp/drums/Chord_3.mp3',state.volume)
             }
           }
           else if(action.payload==='A'){
@@ -124,7 +125,7 @@ function reducer(state,action){
               ...state,
               displayValue: 'Shaker',
               styles: {color: action.color},
-              sound: playSound('https://s3.amazonaws.com/freecodecamp/drums/Give_us_a_light.mp3')
+              sound: playSound('https://s3.amazonaws.com/freecodecamp/drums/Give_us_a_light.mp3',state.volume)
             }
           }
           else if(action.payload==='S'){
@@ -132,7 +133,7 @@ function reducer(state,action){
               ...state,
               displayValue: 'Open HH',
               styles: {color: action.color},
-              sound: playSound('https://s3.amazonaws.com/freecodecamp/drums/Dry_Ohh.mp3')
+              sound: playSound('https://s3.amazonaws.com/freecodecamp/drums/Dry_Ohh.mp3',state.volume)
             }
           }
           else if(action.payload==='D'){
@@ -140,7 +141,7 @@ function reducer(state,action){
               ...state,
               displayValue: 'Closed HH',
               styles: {color: action.color},
-              sound: playSound('https://s3.amazonaws.com/freecodecamp/drums/Bld_H1.mp3')
+              sound: playSound('https://s3.amazonaws.com/freecodecamp/drums/Bld_H1.mp3',state.volume)
             }
           }
           else if(action.payload==='Z'){
@@ -148,7 +149,7 @@ function reducer(state,action){
               ...state,
               displayValue: 'Punchy Kick',
               styles: {color: action.color},
-              sound: playSound('https://s3.amazonaws.com/freecodecamp/drums/punchy_kick_1.mp3')
+              sound: playSound('https://s3.amazonaws.com/freecodecamp/drums/punchy_kick_1.mp3',state.volume)
             }
           }
           else if(action.payload==='X'){
@@ -156,7 +157,7 @@ function reducer(state,action){
               ...state,
               displayValue: 'Side Stick',
               styles: {color: action.color},
-              sound: playSound('https://s3.amazonaws.com/freecodecamp/drums/side_stick_1.mp3')
+              sound: playSound('https://s3.amazonaws.com/freecodecamp/drums/side_stick_1.mp3',state.volume)
             }
           }
           else if(action.payload==='C'){
@@ -164,7 +165,7 @@ function reducer(state,action){
               ...state,
               displayValue: 'Snare',
               styles: {color: action.color},
-              sound: playSound('https://s3.amazonaws.com/freecodecamp/drums/Brk_Snr.mp3')
+              sound: playSound('https://s3.amazonaws.com/freecodecamp/drums/Brk_Snr.mp3',state.volume)
             }
           }
           else if(action.payload===ACTION.BANK){
@@ -181,7 +182,12 @@ function reducer(state,action){
           displayValue: '',
           power: false,
         } 
-         
+      case ACTION.VOLUME:
+        return{
+          ...state,
+          displayValue: 'Volume: '+ action.payload,
+          volume: action.payload
+        }  
       default:
         return state;
     }
@@ -197,8 +203,9 @@ function reducer(state,action){
 
   }
 }
-function playSound(url){
+function playSound(url,volumeVal){
   let audio = new Audio(url);
+  audio.volume=volumeVal/100;
   audio.play();
 
 }
@@ -206,7 +213,7 @@ const initialState={
   displayValue: '',
   power: true,
   bank: 'heater_kit',
-  voulume: 0,
+  volume: 50,
   sound: '',
   styles: {color: 'black'}
 }
@@ -254,7 +261,7 @@ function App() {
           <div className="textDisplay">{state.displayValue}</div>
           </div>
           <div className="volumeBox">
-          <input type="range" className="volumeStyle" id='volume' min={0} max={100} step={1}></input>
+          <input type="range" className="volumeStyle" id='volume' value={state.volume} min={0} max={100} step={1} onChange={(e)=>dispatch({type: ACTION.VOLUME, payload: e.target.value})}></input>
           <label for='volume' className="labelThree"></label>
           </div>
           <div className="bankBox">
